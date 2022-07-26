@@ -295,6 +295,8 @@ router.get("/cart", verifyLogin, async (req, res) => {
   let cart = await userHelper.getCartByUser(req.session.user._id);
   let couponCodes = await adminHelper.getAllCoupons();
   req.session.totalAmount = totalAmount;
+
+  
   res.render("user/pages/cart", {
     userUi: true,
     category: req.session.category,
