@@ -70,13 +70,18 @@ module.exports = {
   //-----------------all product -------------------------
   getAllProduct: () => {
     return new Promise(async (resolve, reject) => {
-      let products = await db
+      try {
+        let products = await db
         .get()
         .collection(collection.PRODUCT_COLLECTION)
         .find()
         .toArray();
 
       resolve(products);
+      } catch (error) {
+        resolve()
+      }
+    
     });
   },
 

@@ -1,13 +1,13 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
-var db = require("./config/connection");
-var session = require("express-session");
-var flash = require("connect-flash");
-// var fileUpload = require('express-fileUpload')
-var multer = require("multer");
+ const createError = require("http-errors");
+ const express = require("express");
+ const path = require("path");
+ const cookieParser = require("cookie-parser");
+ const logger = require("morgan");
+ const db = require("./config/connection");
+ const session = require("express-session");
+ const flash = require("connect-flash");
+//  const fileUpload = require('express-fileUpload')
+ const multer = require("multer");
 require("dotenv").config()
 
 // connect mongodb
@@ -19,11 +19,11 @@ db.connect((err) => {
   }
 });
 
-var userRouter = require("./routes/users");
-var adminRouter = require("./routes/admin");
+ const userRouter = require("./routes/users");
+ const adminRouter = require("./routes/admin");
 
-var app = express();
-var hbs = require("express-handlebars");
+ const app = express();
+ const hbs = require("express-handlebars");
 const { Db } = require("mongodb");
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
